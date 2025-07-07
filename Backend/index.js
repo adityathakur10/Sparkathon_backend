@@ -11,16 +11,16 @@ app.use('/user',userRouter);
 // app.get('/addData')
 app.use('/app',require('./routes/index'));
 
-
+const PORT=process.env.PORT || 3000;
 const start=async()=>{
     try {
         await connectDb(process.env.MONGO_URI);;
-        app.listen(3000,()=>{
-            console.log("server is running on port 3000");
+        app.listen(PORT,()=>{
+            console.log(`server is running on port ${PORT}`);
         })
 
     } catch (error) {
-        console.llog(`Error connecting to the database: ${error.message}`);
+        console.log(`Error connecting to the database: ${error.message}`);
     }
 }
 
