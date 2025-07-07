@@ -4,6 +4,7 @@ const mongoose=require('mongoose');
 
 const cateogorySearch=async(req,res)=>{
     try {
+        console.log("Searching products by category");
         const {category}=req.params;
         const {page=1,limit=10}=req.query;
 
